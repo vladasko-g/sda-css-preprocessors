@@ -1,0 +1,3 @@
+@function doublePixels($size) {
+  @return 2px * $size;
+}

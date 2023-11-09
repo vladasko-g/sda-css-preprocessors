@@ -1,0 +1,24 @@
+@mixin simpleButton {
+  background: black;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+
+  &:hover {
+    opacity: 0.7;
+    cursor: pointer;
+  }
+}
+
+@mixin advancedButton($shadowColor: blue) {
+  @include simpleButton;
+
+  box-shadow: 5px 5px 5px $shadowColor;
+
+  @if $shadowColor == blue {
+    background: white;
+    border: 1px solid;
+    color: blue;
+  }
+}

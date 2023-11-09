@@ -1,7 +1,41 @@
+@use "./variables" as vars;
+@use "./mixins" as mixins;
+@import "./functions.scss";
+
 div {
-  background: grey;
+  background: vars.$bgColor;
+
+  &.someClass {
+    background: yellow;
+  }
 
   h1 {
-    color: blue;
+    color: vars.$textColor;
+    padding: doublePixels(10);
   }
+}
+
+.anotherClass {
+  background: yellow;
+
+  &__text {
+    font-weight: 600;
+    color: purple;
+  }
+}
+
+button {
+  @include mixins.simpleButton();
+}
+
+.link {
+  @extend button;
+
+  text-decoration: none;
+  color: blue;
+  background: none;
+}
+
+.advanced {
+  @include mixins.advancedButton(red);
 }
