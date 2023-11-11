@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "npm-run-all watch serve",
+    "start": "npm-run-all --parallel serve watch",
     "watch": "webpack --watch",
     "build": "webpack",
     "serve": "node server.js"
